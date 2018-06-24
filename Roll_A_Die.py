@@ -4,7 +4,7 @@ import random
 print("Roll-a-Die")
 print("\nTo roll a die, type \"Roll\"", end="")
 print(" and then type the number of sides the die should have")
-print("Or, if you want to flip a coin instead, type \"Flip a coin\"")
+print("Or, if you want to flip a coin instead, type \"Flip\"")
 print("\nWhen you want to close this program, type \"Quit\"\n")
 
 command = input()
@@ -12,12 +12,14 @@ running = "yes"
 
 while running == "yes":
 
+    command = command.lower()
+
     # code that lets the user exit the program
-    if command == "Quit":
+    if command == "quit":
         exit()
 
     # code for rolling a die
-    if command == "Roll":
+    if command == "roll":
         # asks user how many sides the dice they are rolling should have
         print("How many sides should the die have?")
         sides = input()
@@ -43,7 +45,7 @@ while running == "yes":
 
     # code for flipping a coin
     # asks user how many coins they want to flip
-    if command == "Flip a coin":
+    if command == "flip":
         print("How many coins do you want to flip?")
         coin_num = input()
         # checks if user input a number. if not, prints error message
@@ -63,6 +65,6 @@ while running == "yes":
         continue
 
     # error message for when user inputs unknown command
-    if command != "Flip a coin" or "Roll" or "Quit":
+    if command != "flip" or "roll" or "quit":
         print("Im not sure what you mean")
         command = input()
